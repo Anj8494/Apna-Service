@@ -1,0 +1,56 @@
+.edit-account-container{
+    padding: 20px;
+    background-color: #e0f7fa;
+    text-align: center;
+    width: 350%;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-right: 250px;
+}
+
+.edit-acoount-container{
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group{
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label{
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1em;
+    font-weight: bold;
+}
+input{
+    width: 90%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+}
+
+.button{
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #ff9800;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #e68900;
+}
+
+
+
+

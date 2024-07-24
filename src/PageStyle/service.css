@@ -1,0 +1,50 @@
+.container{
+    font-family: Georgia, serif;
+    padding: 20px;
+    background-color: #e0f7fa;
+    text-align: center;
+}
+h1{
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+.area-list{
+    list-style: none;
+    padding: 0;
+}
+.area-item{
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    margin: 10px 0;
+    padding: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px(0, 0, 0, 0.1);
+}
+
+.icon-placeholder{
+    width: 40px;
+    height: 40px;
+    background-color: #bdbdbd;
+    border-radius: 55%;
+    margin-right: 10px;
+    
+}
+
+.area-name{
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.area-location{
+    margin: 0;
+    color: #757575;
+
+}
+
+
+
+
+
+
