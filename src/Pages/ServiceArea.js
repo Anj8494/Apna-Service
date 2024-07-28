@@ -1,9 +1,6 @@
 import { useNavigate } from 'react-router-dom';
-import service from '../PageStyle/service.css'
+import servicearea from '../PageStyle/service.css'
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import { Avatar } from '@mui/material';
-import avtar from '../assest/avtar.png'
-import Need from './Need/Need';
 
 const ServiceArea=()=>
 {
@@ -27,7 +24,7 @@ const ServiceArea=()=>
                   <img src="https://w7.pngwing.com/pngs/555/703/png-transparent-computer-icons-avatar-woman-user-avatar-face-heroes-service-thumbnail.png" 
                   alt="user"
                   onClick={()=>handleNavigation('/profile')}
-                   className="avatar"/>
+                className='avatar'/>
              </div>
             <h1>Service Area</h1>
             <ul className='area-list'>

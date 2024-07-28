@@ -10,10 +10,11 @@ import ServiceArea from './Pages/ServiceArea'
 import Need from './Pages/Need/Need'
 import Boat from './Pages/Need/Boat'
 import Equipment from './Pages/Need/Equipment'
-import Persnol from './Pages/Need/Presonal'
+
 import Vehicle from './Pages/Need/Vehicle'
 import Profile from './Pages/User/Profile';
 import Edit from './Pages/User/Edit'
+import Personal from './Pages/Need/Personal';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -31,7 +32,7 @@ root.render(
     <Route path='/need' element={<Need/>}/>
     <Route path='/boat' element={<Boat/>}/>
     <Route path='/equipment' element={<Equipment/>}/>
-    <Route path='/persnol' element={<Persnol/>}/>
+    <Route path='/personal' element={<Personal/>}/>
     <Route path='/vehicle' element={<Vehicle/>}/>
   </Routes>
   </BrowserRouter>

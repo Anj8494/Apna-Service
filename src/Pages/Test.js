@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import test from '../PageStyle/need/test.css'
+import { ArrowBack } from "@mui/icons-material";
 const Test =()=>
     {
         const [quantity, setQuantity] = useState('');
@@ -20,8 +21,9 @@ const Test =()=>
         }
     return(
         <div className="form-container">
+        <ArrowBack className='arrow'/>
          <img src='https://w7.pngwing.com/pngs/555/703/png-transparent-computer-icons-avatar-woman-user-avatar-face-heroes-service-thumbnail.png' 
-         className='logo' onClick={()=>handleNavigate('/profile')}/>
+         className='logo' />
             <h1>Test</h1>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">

@@ -31,7 +31,8 @@ const Profile=()=>
             <BorderColorOutlined onClick={()=>handleNavigation('/edit')} className='edit-profile'/>
             <header className='profile-header'>
             <h1> {user.fullName}</h1>
-            <img src="https://w7.pngwing.com/pngs/555/703/png-transparent-computer-icons-avatar-woman-user-avatar-face-heroes-service-thumbnail.png" alt="user" className="profile-avatar"/>
+            <img src="https://w7.pngwing.com/pngs/555/703/png-transparent-computer-icons-avatar-woman-user-avatar-face-heroes-service-thumbnail.png" alt="user" 
+            className="profile"/>
             </header>
            <div className="profile-menu">
                 <div className="profile-menu-item" onClick={()=>handleNavigation('/orderhistory')}>
