@@ -6,8 +6,9 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Edit } from '@mui/icons-material';
+import { ArrowBack, ArrowBackIos, ArrowOutward, BorderColorOutlined, Edit } from '@mui/icons-material';
 import '../../PageStyle/User/profile.css'
+import avtar from '../../assest/avtar.png'
 const Profile=()=>
 {
 
@@ -26,10 +27,11 @@ const Profile=()=>
 
     return(
         <div className="profile-container">
+            <ArrowBack onClick={()=>handleNavigation('/servicearea')} className='arrow'/>
+            <BorderColorOutlined onClick={()=>handleNavigation('/edit')} className='edit-profile'/>
             <header className='profile-header'>
-            <img src="https://w7.pngwing.com/pngs/555/703/png-transparent-computer-icons-avatar-woman-user-avatar-face-heroes-service-thumbnail.png" alt="user" className="profile-avatar"/>
-            <Edit onClick={()=>handleNavigation('/edit')} className='edit-profile'/>
             <h1> {user.fullName}</h1>
+            <img src="https://w7.pngwing.com/pngs/555/703/png-transparent-computer-icons-avatar-woman-user-avatar-face-heroes-service-thumbnail.png" alt="user" className="profile-avatar"/>
             </header>
            <div className="profile-menu">
                 <div className="profile-menu-item" onClick={()=>handleNavigation('/orderhistory')}>

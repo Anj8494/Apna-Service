@@ -1,12 +1,17 @@
-.container{
+.app{
+    background-color: #b2d1f0;
     font-family: Georgia, serif;
-    background-color: #9bc1e7;
     color: #443c3c;
-    padding: 20px;
+    padding: 50px;
     border-radius: 10px;
-    width: 700px;
+    width: 600px;
     margin: 0 auto;
-    text-align: center;
+    text-align: left;
+    box-shadow: 10px 14px 20px;
+    border-radius: 10px;
+    background-color: #b2d1f0;
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px;
 }
 
 .icon-container{
@@ -22,19 +27,20 @@
 
 .code-inputs{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: left;
     margin-bottom: 20px;
 }
 .code-inputs input{
-    width: 58px;
-    height: 55px;
+    width: 98px;
+    height: 30px;
     font-size: 18px;
     text-align: center;
     border: 2px solid #ccc;
-    border-radius: 6px;
+    border-radius: 10px;
 }
 button{
-    width: 95%;
+    width: 99%;
     padding: 15px;
     background-color: #f97316;
     color: white;
@@ -43,19 +49,12 @@ button{
     font-size: 16px;
     cursor: pointer;
     margin-top: 10px;
+    margin-right: 60px;
 }
 
 .timer{
     margin-top: 15px;
     font-size: 20px;
-    margin-right: 560px;
+    margin-left: 5px;
 }
 
-.success-message{
-    color: black;
-    padding: 10px;
-    border-radius: 5px;
-    margin-top: 10px;
-    font-size: 15px;
-    margin-right: 250px;
-}

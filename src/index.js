@@ -10,7 +10,7 @@ import ServiceArea from './Pages/ServiceArea'
 import Need from './Pages/Need/Need'
 import Boat from './Pages/Need/Boat'
 import Equipment from './Pages/Need/Equipment'
-import Persnol from './Pages/Need/Presnol'
+import Persnol from './Pages/Need/Presonal'
 import Vehicle from './Pages/Need/Vehicle'
 import Profile from './Pages/User/Profile';
 import Edit from './Pages/User/Edit'

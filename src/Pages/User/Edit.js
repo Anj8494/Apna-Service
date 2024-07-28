@@ -1,6 +1,7 @@
 import { useState } from "react";
 import edit from '../../PageStyle/User/edit.css'
 import { Navigate, useNavigate } from "react-router-dom";
+import { ArrowBack } from "@mui/icons-material";
 const Edit=()=>{
     const [fullName, setFullName] =useState("");
     const [mobileNo, setMobileNo] =useState("");
@@ -12,9 +13,14 @@ const Edit=()=>{
         console.log('form submitted:', {fullName, mobileNo, email});
         navigate('/profile')
     }
-
+    const handleNavigation=(path) =>{
+        navigate(path)
+    }
     return(
         <div className="edit-account-container">
+             <div className="arrow">
+            <ArrowBack onClick={()=>handleNavigation('/profile')}/>
+            </div>
             <h1>Edit Accoount</h1>
             <form onSubmit={handlSubmit}>
                 <div className="form-group">
@@ -47,7 +53,7 @@ const Edit=()=>{
                     placeholder="Enter Email"
                     required/>
                 </div>
-                <button type="submit">Update Profile</button>
+                <button className="button" type="submit">Update Profile</button>
 
             </form>
         </div>

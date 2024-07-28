@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {Navigate, useNavigate} from 'react-router-dom'
+import { useNavigate} from 'react-router-dom'
 import login from '../PageStyle/login.css'
 const Login =()=>
     {
@@ -32,6 +32,12 @@ const Login =()=>
                         <option value="+91">+91</option>
                         <option value="+2">+2</option>
                     </select>
+                    {/* <input 
+                    type="text"
+                    placeholder="+1"
+                    className="span"
+                    value={countryCode}
+                    onChange={handleCountryCode}/> */}
                     <input
                     type="tel"
                     value={mobileNumber}
@@ -40,7 +46,7 @@ const Login =()=>
                     required
                     />
                 </div>
-                <button type="submit">Enter</button>
+                <button  className="button" type="submit">Enter</button>
             </form>
 
         </div>

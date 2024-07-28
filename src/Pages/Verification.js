@@ -36,7 +36,7 @@ const Verification=()=>{
      
 
     return(
-        <div className="container">
+        <div className="app">
             <h1>Verification Code,</h1>
             <div className="icon-container">
                 <MobileFriendlyIcon/>
@@ -55,14 +55,9 @@ const Verification=()=>{
                         />
                     ))}
                 </div>
-                <button type="submit">Submit</button>
+                <button type="submit" >Submit</button>
             </form>
             <div className="timer">{formatTime(timeLeft)}</div>
-            <div className="success-message">
-                One time verification code has been sent to your moblie number.
-
-            </div>
-
         </div>
     )
 }

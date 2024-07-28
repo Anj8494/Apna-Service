@@ -1,6 +1,68 @@
-const Test =()=>{
-    return<div>
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import test from '../PageStyle/need/test.css'
+const Test =()=>
+    {
+        const [quantity, setQuantity] = useState('');
+        const [fillerUp, setFillerUp] = useState(false);
+        const [date,setDate] = useState('');
+        const [timSlot, setTimeSlot] = useState('');
+        const [comment, setComment] = useState('');
 
-    </div>
+        const handleSubmit =(event)=>{
+            event.preventDefault();
+            console.log({quantity, fillerUp, date, timSlot, comment});
+        };
+
+        const navigate= useNavigate();
+        const handleNavigate=(path)=>{
+            navigate(path)
+        }
+    return(
+        <div className="form-container">
+         <img src='https://w7.pngwing.com/pngs/555/703/png-transparent-computer-icons-avatar-woman-user-avatar-face-heroes-service-thumbnail.png' 
+         className='logo' onClick={()=>handleNavigate('/profile')}/>
+            <h1>Test</h1>
+            <form onSubmit={handleSubmit}>
+                <div className="form-group">
+                    <input
+                    type="text"
+                    value={quantity}
+                    placeholder="Enter How Many quantity/gallon "
+                    onChange={(event)=> setQuantity(event.target.value)}/>
+                </div>
+                <div className="form-group input-filler">
+                    <label className="label">
+                        <input type="checkbox"
+                        checked={fillerUp}
+                        onChange={(event)=>setFillerUp(event.target.value)}
+                        />
+                        FillerUp
+                    </label>
+                </div>
+                <div className="form-group">
+                    <input
+                    type="date"
+                    value={date}
+                    onChange={(event)=>setDate(event.target.value)}/>
+                </div>
+                <div className="form-group">
+                    <select value={timSlot} onChange={(event)=>setTimeSlot(event.target.value)}>
+                        <option value="">Select Time Slot</option>
+                        <option value="morning">Morning</option>
+                        <option value="afternoon">Afternon</option>
+                        <option value="evening">Evening</option>
+                    </select>
+                </div>
+                <div className="form-group">
+                    <textarea value={comment}
+                    placeholder="Comment"
+                    onChange={(event)=>setComment(event.target.value)}/>
+                </div>
+                <button type="submit">Next</button>
+            </form>
+
+        </div>
+    )
 }
 export default Test;
