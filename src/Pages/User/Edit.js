@@ -6,7 +6,13 @@ const Edit=()=>{
     const [fullName, setFullName] =useState("");
     const [mobileNo, setMobileNo] =useState("");
     const [email, setEmail] = useState("");
+    const [mobileError, setMobileNoError]= useState("")
     const navigate =useNavigate();
+
+    const validateMobileNo=(mobile)=> {
+        const moblieRegex =/\D{10}$/;
+        return moblieRegex.test(mobile)
+    }
 
     const handlSubmit=(event)=>{
         event.preventDefault();
@@ -16,6 +22,19 @@ const Edit=()=>{
     const handleNavigation=(path) =>{
         navigate(path)
     }
+
+    const handleInputChange=(event)=>{
+        const input = event.target.value;
+        const numericInput = input.replace(/\D/g,'');
+        setMobileNo(numericInput);
+        if(!validateMobileNo(numericInput)){
+            setMobileNoError("Invalid mobile number ")
+        }
+        else{
+            setMobileNoError('')
+        }
+    }
+
     return(
         <div className="edit-account-container">
              <div className="arrow">
@@ -39,9 +58,10 @@ const Edit=()=>{
                     type="text"
                     id="mobileNo"
                     value={mobileNo}
-                    onChange={(event)=>setMobileNo(event.target.value)}
+                    onChange={handleInputChange}
                     placeholder="Enter Mobie Number"
                     required/>
+                    {mobileError && <p>{mobileError}</p>}
                 </div>
                 <div className="form-group">
                     <label>Email</label>

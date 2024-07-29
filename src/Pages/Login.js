@@ -8,7 +8,9 @@ const Login =()=>
         const navigate = useNavigate();
 
         const handleInputChange=(event)=>{
-            setMobileNumber(event.target.value)
+            const input = event.target.value;
+            const numericInput = input.replace(/\D/g, '');
+            setMobileNumber(numericInput)
         };
 
         const handleCountryCode=(event) =>{
