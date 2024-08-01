@@ -11,7 +11,9 @@ const Personal=()=>
     return(
         <div className="personal-container">
             <div className="personal-hearder">
-                <img src='https://w7.pngwing.com/pngs/555/703/png-transparent-computer-icons-avatar-woman-user-avatar-face-heroes-service-thumbnail.png' className='logo'/>
+                <img src='https://w7.pngwing.com/pngs/555/703/png-transparent-computer-icons-avatar-woman-user-avatar-face-heroes-service-thumbnail.png' 
+                onClick={()=>navigate('/profile')}
+                className='logo'/>
                 <h1>Personal</h1>
             </div>
             {personalItem?.map((item, index)=>(

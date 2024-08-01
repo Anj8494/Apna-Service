@@ -14,7 +14,9 @@ const Boat=()=>
     return(
         <div className="boat-container">
             <div className="boat-hearder">
-                <img src='https://w7.pngwing.com/pngs/555/703/png-transparent-computer-icons-avatar-woman-user-avatar-face-heroes-service-thumbnail.png' className='logo'/>
+                <img src='https://w7.pngwing.com/pngs/555/703/png-transparent-computer-icons-avatar-woman-user-avatar-face-heroes-service-thumbnail.png' 
+                onClick={()=>navigate('/profile')}
+                className='logo'/>
                 <h1>Boat</h1>
             </div>
             {boatItem?.map((item, index)=>(
