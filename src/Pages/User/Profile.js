@@ -8,7 +8,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowBack, ArrowBackIos, ArrowOutward, BorderColorOutlined, Edit } from '@mui/icons-material';
 import '../../PageStyle/User/profile.css'
-import avtar from '../../assest/avtar.png'
 const Profile=()=>
 {
 
@@ -20,40 +19,40 @@ const Profile=()=>
         email:''
     });
 
-    const handleNavigation=(path) =>{
-        navigate(path)
-    }
+    // const handleNavigation=(path) =>{
+    //     navigate(path)
+    // }
 
 
     return(
         <div className="profile-container">
-            <ArrowBack onClick={()=>handleNavigation('/servicearea')} className='arrow'/>
-            <BorderColorOutlined onClick={()=>handleNavigation('/edit')} className='edit-profile'/>
+            <ArrowBack onClick={()=>navigate('/servicearea')} className='arrow'/>
+            <BorderColorOutlined onClick={()=>navigate('/edit')} className='edit-profile'/>
             <header className='profile-header'>
             <h1> {user.fullName}</h1>
             <img src="https://w7.pngwing.com/pngs/555/703/png-transparent-computer-icons-avatar-woman-user-avatar-face-heroes-service-thumbnail.png" alt="user" 
             className="profile"/>
             </header>
            <div className="profile-menu">
-                <div className="profile-menu-item" onClick={()=>handleNavigation('/orderhistory')}>
+                <div className="profile-menu-item" onClick={()=>navigate('/orderhistory')}>
                 <ListAltIcon className='i'/> Order History
                 </div>
-                <div className='profile-menu-item' onClick={()=>handleNavigation('/faqs')}>
+                <div className='profile-menu-item' onClick={()=>navigate('/faqs')}>
                     <QuestionMarkIcon className='i'/> FAQs
                 </div>
-                <div className='profile-menu-item' onClick={()=>handleNavigation('/notification')}>
+                <div className='profile-menu-item' onClick={()=>navigate('/notification')}>
                     <NotificationsActiveIcon className='i'/> Notification
                 </div>
-                <div className='profile-menu-item' onClick={()=>handleNavigation('/termsofservice')}>
+                <div className='profile-menu-item' onClick={()=>navigate('/termsofservice')}>
                    <InsertDriveFileIcon className='i'/> Terms Of Service
                 </div>
-                <div className='profile-menu-item'onClick={()=>handleNavigation('/aboutus')}>
+                <div className='profile-menu-item'onClick={()=>navigate('/aboutus')}>
                    <ArticleIcon className='i'/> About Us
                 </div>
-                <div className='profile-menu-item' onClick={()=>handleNavigation('/howitworks')}>
+                <div className='profile-menu-item' onClick={()=>navigate('/howitworks')}>
                     <QuestionMarkIcon className='i'/> How It Works
                 </div>
-                <div className='profile-menu-item' onClick={()=>handleNavigation('/logout')}>
+                <div className='profile-menu-item' onClick={()=>navigate('/logout')}>
                      <LogoutIcon className='i'/>   LogOut
                 </div>
            </div>

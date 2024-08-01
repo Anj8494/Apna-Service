@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import test from '../PageStyle/need/test.css'
+import '../PageStyle/need/test.css'
 import { ArrowBack } from "@mui/icons-material";
 const Test =()=>
     {
@@ -16,14 +16,12 @@ const Test =()=>
         };
 
         const navigate= useNavigate();
-        const handleNavigate=(path)=>{
-            navigate(path)
-        }
+      
     return(
         <div className="form-container">
-        <ArrowBack className='arrow'/>
+        <ArrowBack className='arrow' onClick={()=>navigate('/equipment')}/>
          <img src='https://w7.pngwing.com/pngs/555/703/png-transparent-computer-icons-avatar-woman-user-avatar-face-heroes-service-thumbnail.png' 
-         className='logo' />
+         className='logo' onClick={()=>navigate('/profile')} />
             <h1>Test</h1>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">

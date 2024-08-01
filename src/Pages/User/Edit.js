@@ -1,7 +1,7 @@
 import { useState } from "react";
-import edit from '../../PageStyle/User/edit.css'
 import { Navigate, useNavigate } from "react-router-dom";
 import { ArrowBack } from "@mui/icons-material";
+import '../../PageStyle/User/edit.css'
 const Edit=()=>{
     const [fullName, setFullName] =useState("");
     const [mobileNo, setMobileNo] =useState("");
@@ -19,9 +19,9 @@ const Edit=()=>{
         console.log('form submitted:', {fullName, mobileNo, email});
         navigate('/profile')
     }
-    const handleNavigation=(path) =>{
-        navigate(path)
-    }
+    // const handleNavigation=(path) =>{
+    //     navigate(path)
+    // }
 
     const handleInputChange=(event)=>{
         const input = event.target.value;
@@ -38,7 +38,7 @@ const Edit=()=>{
     return(
         <div className="edit-account-container">
              <div className="arrow">
-            <ArrowBack onClick={()=>handleNavigation('/profile')}/>
+            <ArrowBack onClick={()=>navigate('/profile')}/>
             </div>
             <h1>Edit Accoount</h1>
             <form onSubmit={handlSubmit}>

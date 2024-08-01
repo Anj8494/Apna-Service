@@ -34,37 +34,36 @@ body{
 .input{
     display: flex;
     align-items: center;
-    margin-bottom: 21px;
+    margin-bottom: 22px;
 }
 .span{
-    padding: 14px;
+    padding: 11px;
     font-size: 14px;
     border: 1px solid #ccc;
     border-radius: 7px 7px 7px 7px;
     outline: none;
-    margin-left:11px ;
-    
+    margin-left:2px; 
+    margin-top: 4px;    
 }
 .input input{
- flex: 1;
- padding: 14px;
+ padding: 12px;
  font-size: 14px;
  border: 1px solid #ccc;
  border-radius: 7px 7px 7px 7px;
  outline: none; 
+ width: 85%;
 }
 .button{
-    width: 98%;
+    width: 80%;
     height: 45px;
-    padding: 15px;
+    padding: 10px;
     font-size: 18px;
     background-color: #ff8c00;
     color: white;
     border: none;
-    border-radius: 7px;
+    border-radius: 10px;
     cursor: pointer;
     transition: backgraound-color 0.3s;
-    margin-left: 15px;
 }
 .button:hover{
     background-color: #ffa500;

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate} from 'react-router-dom'
-import login from '../PageStyle/login.css'
+import '../../PageStyle/auth/login.css'
 const Login =()=>
     {
         const[mobileNumber,setMobileNumber]= useState("");
@@ -48,7 +48,7 @@ const Login =()=>
                     required
                     />
                 </div>
-                <button  className="button" type="submit">Enter</button>
+                <button className="button" type="submit">Enter</button>
             </form>
 
         </div>

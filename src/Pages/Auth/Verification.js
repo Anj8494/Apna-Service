@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import MobileFriendlyIcon from '@mui/icons-material/MobileFriendly';
-import verification from '../PageStyle/verification.css'
 import { useNavigate } from "react-router-dom";
+import '../../PageStyle/auth/verification.css'
 const Verification=()=>{
     const [code,setCode] =useState(["","","",""]);
     const [timeLeft, settimeLeft] = useState(175);
@@ -79,7 +79,7 @@ const Verification=()=>{
             <p>Enter 4 Digit code</p>
             <form onSubmit={handleSubmit}>
                 <div className="code-inputs" onPaste={handlePaste}>
-                    {code.map((digit, index)=>(
+                    {code?.map((digit, index)=>(
                         <input
                         key={index}
                         type="text"
@@ -93,7 +93,7 @@ const Verification=()=>{
                         />
                     ))}
                 </div>
-                <button type="submit" >Submit</button>
+                <button className="button" type="submit" >Submit</button>
             </form>
             <div className="timer">{formatTime(timeLeft)}</div>
         </div>

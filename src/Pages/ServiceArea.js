@@ -1,7 +1,6 @@
 import { useNavigate } from 'react-router-dom';
-import servicearea from '../PageStyle/service.css'
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-
+import '../PageStyle/service.css'
 const ServiceArea=()=>
 {
     const navigate= useNavigate();
@@ -15,27 +14,27 @@ const ServiceArea=()=>
         {name: 'Norwich' ,location:'Norwich'} 
     ]
 
-    const handleNavigation=(path) =>{
-        navigate(path)
-    }
+    // const handleNavigation=(path) =>{
+    //     navigate(path)
+    // }
     return(
         <div className="container">
             <div className='profile'>
                   <img src="https://w7.pngwing.com/pngs/555/703/png-transparent-computer-icons-avatar-woman-user-avatar-face-heroes-service-thumbnail.png" 
                   alt="user"
-                  onClick={()=>handleNavigation('/profile')}
+                  onClick={()=>navigate('/profile')}
                 className='avatar'/>
              </div>
             <h1>Service Area</h1>
             <ul className='area-list'>
-                {serviceAreas.map((area,index)=>(
+                {serviceAreas?.map((area,index)=>(
                     <li key={index}>
                         <div className="area-item">
                             <div className='icon-placeholder'>
                                 <LocationOnIcon/>
                             </div>
                             <div>
-                                <h2 className='area-name' onClick={()=>handleNavigation('/need')}>{area.name}</h2>
+                                <h2 className='area-name' onClick={()=>navigate('/need')}>{area.name}</h2>
                                 <p className='area-location'>{area.location}</p>
                              </div>
                          </div> 
