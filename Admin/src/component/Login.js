@@ -28,7 +28,7 @@ const Login=()=>
             <div className="login-form">
                 <h2>Welcome to Admin !👋</h2>
                 <p>Please sign-in to your account and start the adventure</p>
-                <form onSubmit={handleLogin}>
+                <form onSubmit={handleLogin} action="/login" method="post">
                     <div className="form-group">
                         <label htmlFor="email">Email</label>
                         <input
