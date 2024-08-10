@@ -1,15 +1,14 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
-import Login from './component/Login'
-import Dashborad from './component/Dashboard'
-import AdminProfile from './component/AdminProfile'
-import Booking from './component/Booking'
-import DeliveryTimeSlot from './component/DeliveryTimeSlot'
-import FuelWorkCity from './component/FuelWorkCity'
-import ManageCtegory from './component/ManageCtegory'
-import Notification from './component/Notification'
-// import SideBar from './component/SideBar'
-import Setting from './component/Setting'
+import Login from './component/Auth/Login'
+import Dashborad from './component/Dashboard/Dashboard'
+import AdminProfile from './component/Admin/AdminProfile'
+import Booking from './component/Pages/Booking'
+import DeliveryTimeSlot from './component/Pages/DeliveryTimeSlot'
+import FuelWorkCity from './component/Pages/FuelWorkCity'
+import ManageCtegory from './component/Pages/ManageCtegory'
+import Notification from './component/Pages/Notification'
+import Setting from './component/Pages/Setting'
 import Drivers from './component/user/Drivers'
 import User from './component/user/User'
 
@@ -17,7 +16,6 @@ function App() {
   return (
     <Routes>
       <Route path='/'exact Component={Login}/>
-      {/* <Route path='/sidebar' Component={SideBar}/> */}
       <Route path='/dashboard' Component={Dashborad}/>
       <Route path='/adminprofile' Component={AdminProfile}/>
       <Route path='/booking' Component={Booking}/>

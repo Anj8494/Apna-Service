@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const passport = require('passport');
 var app = express();
 const router = express.Router();
+const db = require('./config/db');
 
 
 app.use(bodyParser.json());
@@ -12,7 +13,15 @@ app.use(bodyParser.json());
     console.log("hello, node server is listing to http://localhost:%s",port)
 })
 
+db()
+const 
 
+
+app.get('/', function(request,response)
+{
+    response.send("hello nj")
+
+})
 
 app.post("/login",passport.authenticate("local"), async(request,response)=>{
     let {email, password} = request.body;
