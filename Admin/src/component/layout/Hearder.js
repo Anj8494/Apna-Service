@@ -47,7 +47,7 @@ const Hearder = () =>
                   >
                     Anjali
                     <br/>
-                    <small className="text-muted">Admin</small>
+                    <small className="text-muted">anjali</small>
                   </Link>
                 </li>
 

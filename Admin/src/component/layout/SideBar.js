@@ -85,9 +85,9 @@ const SideBar = () => {
               <span className="app-brand-text demo menu-text fw-semibold ms-2">Apna Service</span>
             </Link>
 
-            <a href="javascript:void(0);" className="layout-menu-toggle menu-link text-large ms-auto">
+            <Link to="" className="layout-menu-toggle menu-link text-large ms-auto">
               <i className="mdi menu-toggle-icon d-xl-block align-middle mdi-20px"></i>
-            </a>
+            </Link>
           </div>
 
           <div className="menu-inner-shadow"></div>
@@ -95,41 +95,41 @@ const SideBar = () => {
           <ul className="menu-inner py-1">
             
             <li className="menu-item active open">
-              <Link href="javascript:void(0);" className="menu-link ">
+              <Link to='/dashboard' className="menu-link ">
                 <i className="menu-icon tf-icons mdi mdi-home-outline"></i>
                 <div data-i18n="Dashboards">Dashboards</div>
               </Link> 
             </li>          
             <li className="menu-item">
-              <a href="javascript:void(0)" className="menu-link menu-toggle">
+              <Link to="" className="menu-link menu-toggle">
                 <BookOnline className="menu-icon tf-icons mdi mdi-archive-outline"/>
                 <div data-i18n="User interface">Booking</div>
                 <div class="badge bg-danger rounded-pill ms-auto">4</div>
-              </a>
+              </Link>
             </li>
 
           
             <li className="menu-item">
-              <a href="javascript:void(0)" className="menu-link">
+              <Link to="" className="menu-link">
                 <Room className="menu-icon tf-icons mdi mdi-star-outline"/>
                 <div data-i18n="Extended UI">Fuel Work City</div>
-              </a>
+              </Link>
             </li>
 
            
             <li className="menu-item">
-              <a href="icons-mdi.html" className="menu-link">
+              <Link to="" className="menu-link">
                 <Dns className="menu-icon tf-icons mdi mdi-google-circles-extended"/>
                 <div data-i18n="Icons">Manage Category</div>
-              </a>
+              </Link>
             </li>
           
             <li className="menu-item">
-              <a href="javascript:void(0);" className="menu-link menu-toggle" onClick={()=> toggleSubMenu('userManagement')}>
+              <Link to="" className="menu-link menu-toggle" onClick={()=> toggleSubMenu('userManagement')}>
                 <BookOnline className="menu-icon tf-icons mdi mdi-form-select"/>
                 <div data-i18n="Form Elements">User Manage</div>
                 <div class="badge bg-danger rounded-pill ms-auto">2</div>
-              </a>
+              </Link>
               {activeMenu === 'userManagement' && (
                 <div classNameName="submenu-item">
                     <div style={{margin: "0px 30px"}} onClick={()=>navigate('/user')}>User</div>
@@ -139,30 +139,31 @@ const SideBar = () => {
             </li>
 
             <li className="menu-item">
-              <a href="icons-mdi.html" className="menu-link">
+              <Link to="" 
+               className="menu-link">
                 <Dns className="menu-icon tf-icons mdi mdi-google-circles-extended"/>
                 <div data-i18n="Icons">Manage Category</div>
-              </a>
+              </Link>
             </li>
 
 
             <li className="menu-item">
-              <a href="icons-mdi.html" className="menu-link">
+              <Link to="" className="menu-link">
                 <AccessTime className="menu-icon tf-icons mdi mdi-google-circles-extended"/>
                 <div data-i18n="Icons">Delivery Time Slot</div>
-              </a>
+              </Link>
             </li>
 
 
             <li className="menu-item">
-              <a href="icons-mdi.html" className="menu-link">
+              <Link to="" className="menu-link">
                 <NotificationsActive className="menu-icon tf-icons mdi mdi-google-circles-extended"/>
                 <div data-i18n="Icons">Notification</div>
-              </a>
+              </Link>
             </li>
 
             <li className="menu-item">
-              <Link href="icons-mdi.html" className="menu-link" onClick={()=> toggleSubMenu('editors')}>
+              <Link to="" className="menu-link" onClick={()=> toggleSubMenu('editors')}>
                 <Dns className="menu-icon tf-icons mdi mdi-google-circles-extended"/>
                 <div data-i18n="Icons">Editor</div>
                 <div class="badge bg-danger rounded-pill ms-auto">2</div>
@@ -176,17 +177,17 @@ const SideBar = () => {
             </li>
 
             <li className="menu-item">
-              <a href="icons-mdi.html" className="menu-link">
+              <Link to="" className="menu-link">
                 <Person className="menu-icon tf-icons mdi mdi-google-circles-extended"/>
                 <div data-i18n="Icons">Admin Profile</div>
-              </a>
+              </Link>
             </li>
 
             <li className="menu-item">
-              <a href="icons-mdi.html" className="menu-link">
+              <Link className="menu-link">
                 <Settings className="menu-icon tf-icons mdi mdi-google-circles-extended"/>
                 <div data-i18n="Icons">Setting</div>
-              </a>
+              </Link>
             </li>
            
           </ul>
