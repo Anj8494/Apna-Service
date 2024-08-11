@@ -1,7 +1,7 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Login from './component/Auth/Login'
-import Dashborad from './component/Dashboard/Dashboard'
+import Dashborad from './component/layout/Dashboard'
 import AdminProfile from './component/Admin/AdminProfile'
 import Booking from './component/Pages/Booking'
 import DeliveryTimeSlot from './component/Pages/DeliveryTimeSlot'
@@ -11,7 +11,6 @@ import Notification from './component/Pages/Notification'
 import Setting from './component/Pages/Setting'
 import Drivers from './component/user/Drivers'
 import User from './component/user/User'
-
 function App() {
   return (
     <Routes>

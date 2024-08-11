@@ -119,7 +119,7 @@ const Login = () => {
                   </Link>
                 </div>
                 <div className="mb-3">
-                  <button className="btn btn-primary d-grid w-100" type="submit" onClick={() => navigate('/dashboard')}>Sign in</button>
+                  <button className="btn btn-primary d-grid w-100" type="submit" onClick={() => navigate('/hearder')}>Sign in</button>
                 </div>
               </form>
 
