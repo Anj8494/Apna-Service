@@ -94,7 +94,7 @@ const Dashboard = () => {
               </div>
             </div>
             <div className="search-bar">
-                 <input type="text" placeholder="Search"/>
+               <input type="text" placeholder="Search"/>
                  <button className="search-button"><Search/></button>
                  <button className="reload"><CachedOutlined/></button>
              </div>

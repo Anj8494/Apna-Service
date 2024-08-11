@@ -1,6 +1,7 @@
 import { CachedOutlined, Search } from "@mui/icons-material";
-import { Avatar } from "@mui/material";
-// import SideBar from "./SideBar";
+import '../../stylecomponent/fuelworkcity.css'
+import SideBar from "../layout/SideBar";
+import Hearder from "../layout/Hearder";
 import { useNavigate } from "react-router-dom";
 const FuelWorkCity = () => {
   const cities = [
@@ -42,18 +43,79 @@ const FuelWorkCity = () => {
     },
     {
       id: 7,
-      city:"Dewas",
+      city: "Dewas",
       address: "Dewas, Madhya Pradesh,India",
       status: "Approved",
     },
   ];
 
-  const navigate =useNavigate();
-  
+  const navigate = useNavigate();
 
   return (
     <div>
-      
+      <div className="layout-wrapper layout-content-navbar">
+        <div className="layout-container">
+          <SideBar />
+          <div className="layout-page">
+            <Hearder />
+            <div className="content">
+              <hearder className="hearder">
+                <h1>Fuel Work City</h1>
+                <button className="addcity" onClick={()=>navigate('/fuelform')}>+ Add New City</button>
+              </hearder>
+            </div>
+               <div className="card">
+              <div
+                className="heading"
+                style={{ display: "flex", justifyContent: "space-between" }}
+              >
+                <h3>Pending Booking</h3>
+                <p>Showing 1-6 of 29</p>
+              </div>
+            </div>
+
+
+            <div class="content-wrapper">
+              <div className="table-responsive">
+                <table className="table">
+                  <thead className="table-light">
+                    <tr>
+                      <th className="text-truncate">S.No</th>
+                      <th className="text-truncate">CITY</th>
+                      <th className="text-truncate">FULL ADDRESS</th>
+                      <th className="text-truncate">STATUS</th>
+                      <th className="text-truncate">ACTION</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {cities?.map((city, index) => (
+                      <tr>
+                        <td>
+                          <div className="d-flex align-items-center">
+                            <div className="avatar avatar-sm me-3">
+                              {city.id}
+                            </div>
+                          </div>
+                        </td>
+                        <td className="text-truncate">
+                          {city.city}
+                        </td>
+                        <td className="text-truncate">{city.address}</td>
+                        <td className="text-truncate">
+                          <span className="badge bg-label-warning rounded-pill">
+                            {city.status}
+                          </span>
+                        </td>
+                        <td className="text-truncate"><i className="mdi mdi-dots-vertical"></i></td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     // <div class="layout-wrapper layout-content-navbar">
     //   <div class="layout-container">
@@ -64,7 +126,7 @@ const FuelWorkCity = () => {
     //           <div className="profile">
     //             <span>Admin</span>
     //             <div className="profile-pic">
-    //             <img src="https://w7.pngwing.com/pngs/555/703/png-transparent-computer-icons-avatar-woman-user-avatar-face-heroes-service-thumbnail.png" 
+    //             <img src="https://w7.pngwing.com/pngs/555/703/png-transparent-computer-icons-avatar-woman-user-avatar-face-heroes-service-thumbnail.png"
     //              alt="profile" className="pic" onClick={()=>navigate('/adminprofile')}/>
     //             </div>
     //           </div>
@@ -122,7 +184,7 @@ const FuelWorkCity = () => {
     //               </table>
     //             </div>
     //           </div>
-            
+
     //           <div className="row">
     //             <div className="col-xxl">
     //               <div className="card mb-4">
@@ -203,7 +265,7 @@ const FuelWorkCity = () => {
     //               </div>
     //             </div>
     //           </div>
-            
+
     //         </div>
     //       </div>
     //     </div>

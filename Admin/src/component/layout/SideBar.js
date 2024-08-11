@@ -110,7 +110,7 @@ const SideBar = () => {
 
           
             <li className="menu-item">
-              <Link to="" className="menu-link">
+              <Link to="/fuelworkcity" className="menu-link">
                 <Room className="menu-icon tf-icons mdi mdi-star-outline"/>
                 <div data-i18n="Extended UI">Fuel Work City</div>
               </Link>
