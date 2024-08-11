@@ -1,6 +1,15 @@
-import { Book,CachedOutlined,Person,Person2,Search} from "@mui/icons-material";
+import {
+  Book,
+  CachedOutlined,
+  Person,
+  Person2,
+  Search,
+} from "@mui/icons-material";
+import '../../stylecomponent/dashboard.css'
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Hearder from "./Hearder";
+import SideBar from "./SideBar";
 const Dashboard = () => {
   const [statistics, setStatistics] = useState({
     totalUsers: 388,
@@ -58,15 +67,96 @@ const Dashboard = () => {
   ]);
   return (
     <div>
-      
+      <div className="layout-wrapper layout-content-navbar">
+        <div className="layout-container">
+          <SideBar />
+          <div className="layout-page">
+            <Hearder/>
+            <div className="top-bar">
+              <div className="statistics">
+                <h3 className="head">Statistics</h3>
+                <div className="stat-item">
+                  <Person className="icons" />
+                  <h3>{statistics.totalUsers}</h3>
+                  <p> Total Users</p>
+                </div>
+                <div className="stat-item">
+                  <Person2 className="icons" />
+                  <h3>{statistics.totalDrivers}</h3>
+                  <p>Total Drivers</p>
+                </div>
+                <div className="stat-item">
+                  <Book className="icons" />
+                  <h3>{statistics.bookingNotAssigned}</h3>
+                  <p>Booking Not Assigned</p>
+                </div>
+              </div>
+            </div>
+            <div className="card">
+              <div
+                className="heading"
+                style={{ display: "flex", justifyContent: "space-between" }}
+              >
+                <h3>Pending Booking</h3>
+                <p>Showing 1-6 of 29</p>
+              </div>
+            </div>
+            <div class="content-wrapper">
+              <div className="table-responsive">
+                <table className="table">
+                  <thead className="table-light">
+                    <tr>
+                      <th className="text-truncate">S.No</th>
+                      <th className="text-truncate">CUSTOMER NAME</th>
+                      <th className="text-truncate">PLAN</th>
+                      <th className="text-truncate">DRIVER NAME</th>
+                      <th className="text-truncate">FUEL TYPE</th>
+                      <th className="text-truncate">FUEL PRICE</th>
+                      <th className="text-truncate">DELIVERY ADDRESS</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {bookings?.map((booking, index) => (
+                      <tr>
+                        <td>
+                          <div className="d-flex align-items-center">
+                            <div className="avatar avatar-sm me-3">
+                              {booking.id}
+                            </div>
+                          </div>
+                        </td>
+                        <td className="text-truncate">
+                          {booking.customerName}
+                        </td>
+                        <td className="text-truncate">{booking.plan}</td>
+                        <td className="text-truncate">
+                          <span className="badge bg-label-warning rounded-pill">
+                            {booking.driverName}
+                          </span>
+                        </td>
+                        <td className="text-truncate">{booking.fuelType}</td>
+                        <td className="text-truncate">{booking.fuelPrice}</td>
+                        <td className="text-truncate">
+                          {booking.deliveryAddress}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
     // <div className="content-wrapper">
     //     <div className="main-con">
     //       <div className="dashboard">
     //         <div className="profile">
     //           <span>Admin</span>
     //           <div className="profile-pic ">
-    //           <img src="https://w7.pngwing.com/pngs/555/703/png-transparent-computer-icons-avatar-woman-user-avatar-face-heroes-service-thumbnail.png" 
+    //           <img src="https://w7.pngwing.com/pngs/555/703/png-transparent-computer-icons-avatar-woman-user-avatar-face-heroes-service-thumbnail.png"
     //              alt="profile" className="pic" onClick={()=>navigate('/adminprofile')}/>
     //           </div>
     //         </div>
