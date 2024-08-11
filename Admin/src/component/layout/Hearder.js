@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 const Hearder = () => 
     {
   return (
-    <div className="layout-wrapper layout-content-navbar">
-      <div className="layout-container">
-        <div className="layout-page">
+    // <div className="layout-wrapper layout-content-navbar">
+    //   <div className="layout-container">
+    //     <div className="layout-page">
           <nav
             className="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
             id="layout-navbar"
@@ -45,7 +45,9 @@ const Hearder = () =>
                     data-show-count="true"
                     aria-label="Star themeselection/materio-bootstrap-html-admin-template-free on GitHub"
                   >
-                    Star
+                    Anjali
+                    <br/>
+                    <small className="text-muted">Admin</small>
                   </Link>
                 </li>
 
@@ -115,9 +117,9 @@ const Hearder = () =>
               </ul>
             </div>
           </nav>
-        </div>
-      </div>
-    </div>
+    //     </div>
+    //   </div>
+    // </div>
   );
 };
 export default Hearder;

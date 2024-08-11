@@ -10,6 +10,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Hearder from "./Hearder";
 import SideBar from "./SideBar";
+import Footer from "./Footer";
 const Dashboard = () => {
   const [statistics, setStatistics] = useState({
     totalUsers: 388,
@@ -92,6 +93,11 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
+            <div className="search-bar">
+                 <input type="text" placeholder="Search"/>
+                 <button className="search-button"><Search/></button>
+                 <button className="reload"><CachedOutlined/></button>
+             </div>
             <div className="card">
               <div
                 className="heading"
@@ -145,10 +151,12 @@ const Dashboard = () => {
                 </table>
               </div>
             </div>
+            <Footer/>
           </div>
         </div>
       </div>
     </div>
+     
 
     // <div className="content-wrapper">
     //     <div className="main-con">
