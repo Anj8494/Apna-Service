@@ -1,45 +1,65 @@
-var express = require('express')
-const bodyParser = require('body-parser');
-const passport = require('passport');
-var app = express();
-const router = express.Router();
-const db = require('./config/db');
+const express = require("express");
+const cors = require("cors");
+const db= require('./db/config');
+const User = require("./db/User");
+const bcrypt = require('bcryptjs');
 
-
-app.use(bodyParser.json());
- var server = app.listen(8081,function()
-{
-    var port = server.address().port
-    console.log("hello, node server is listing to http://localhost:%s",port)
-})
+const app = express();
+app.use(express.json())
+app.use(cors())
 
 db()
-const 
 
 
-app.get('/', function(request,response)
-{
-    response.send("hello nj")
+// app.get('/testing',function(request, response)
+// {
+//     response.json(
+//         {
+//             status :"Success",
+//             data : "Your request has been submited"
+//         })
+// })
 
-})
 
-app.post("/login",passport.authenticate("local"), async(request,response)=>{
-    let {email, password} = request.body;
-    console.log("body:" , request.body)
-    console.log("email:", request.body.email)
-    console.log("password:", request.body.password)
-    if(email=== request.body.email && password===request.body.password)
-    {
-        response.json({
-            statusbar:"200",
-            message: "login successfully"
-        })
+
+
+app.post("/login", async(req,res)=>{
+    console.log("body",req.body)
+    console.log("email:",req.body.email)
+    console.log("password:", req.body.password)
+    if(req.body.password && req.body.email ){
+        let user= await User.findOne({email: req.body.email});
+        if(user)
+        {
+            const match = await bcrypt.compare(req.body.password, user.password);
+            res.send(user)
+        }
+        else
+        {
+            res.send({result:"nouser found"})
+        }
     }
     else
     {
-        response.json({
-            statusbar: "404",
-            message:"email and password is doen't match"
-        })
+        res.send({result:"nouser found"})
     }
+   
 })
+
+
+
+
+
+
+// app.get("/",(req,res)=>{
+//     res.send("app is working....")
+// });
+
+
+app.listen(3000, function(){
+    console.log("hello, node server is lising to http://localhost:3000")
+})
+// var server = app.listen(3000,function(){
+//     var port = server.address().port
+//     console.log("hello , node server is listing to http://localhost:%s", port)
+// })
