@@ -5,24 +5,161 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleLogin = async () => {
-    console.warn("email,password", email, password);
-    let result = await fetch("http://localhost:3000/login", {
-      method: "POST",
-      body: JSON.stringify({ email, password }),
-      headers: {
-        "Content-type": "application/json",
-      },
-    });
-    result = await result.JSON();
-    console.warn(result);
-    if (result.name) {
-      localStorage.setItem("user", JSON.stringify(result));
-      navigate("/dashboard");
-    } else {
-      alert("please enter connect details");
+
+
+
+
+
+
+//   const handleLogin = async (e) => {
+//     e.preventDefault();
+//     try {
+//         const response = await fetch("http://localhost:3000/login", {
+//             method: "POST",
+//             body: JSON.stringify({ email, password }),
+//             headers: {
+//                 "Content-Type": "application/json",
+//             },
+//         });
+
+//         if (!response.ok) {
+//             throw new Error("Login failed");
+//         }
+
+//         // Ensure response body exists before parsing
+//         const text = await response.text();
+//         if (text) {
+//             const result = JSON.parse(text);
+//             console.log(result);
+//             // Handle success case
+//         } else {
+//             throw new Error("Empty response from server");
+//         }
+//     } catch (error) {
+//         console.error("Login error:", error);
+//         alert(error.message || "An error occurred during login");
+//     }
+// };
+
+
+  // const handleLogin = async (e) => {
+  //   e.preventDefault();
+
+  //   try {
+  //     const response = await fetch("http://localhost:3000/login", {
+  //       method: "POST",
+  //       body: JSON.stringify({ email, password }),
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //     });
+
+  //     const result = response.json();
+
+  //     if (!response.ok) {
+  //       throw new Error(result.message || "Login failed");
+  //     }
+
+  //     if (result.user) {
+  //       localStorage.setItem("user", JSON.stringify(result.user));
+  //       navigate("/dashboard");
+  //     } else {
+  //       alert("Invalid login credentials");
+  //     }
+  //   } catch (error) {
+  //     console.error("Login error:", error);
+  //     alert(error.message || "An error occurred during login");
+  //   }
+  // };
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    
+    const email = "your_email@example.com";  // Replace with actual email input value
+    const password = "your_password";        // Replace with actual password input value
+    
+    try {
+        const response = await fetch("http://localhost:3000/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ email, password }),
+        });
+
+        const data = await response.json();  // Parse the JSON from the response
+
+        if (response.ok) {
+            if (data.status === 200) {
+                alert(data.message); // "login successfully"
+                // Handle successful login (e.g., redirect, store token, etc.)
+            } else if (data.status === 404) {
+                alert(data.message); // "email and password doesn't match"
+            }
+        } else {
+            alert("Something went wrong!");
+        }
+    } catch (error) {
+        console.error("Login error:", error);
+        alert("An error occurred during login");
     }
-  };
+};
+
+
+
+
+
+
+  
+
+  // const handleLogin = async () => {
+  //   console.warn("email,password", email, password);
+  //   let result = await fetch("http://localhost:3000/login", {
+  //     method: "POST",
+  //     body: JSON.stringify({ email, password }),
+  //     headers: {
+  //       "Content-type": "application/json",
+  //     },
+  //   });
+  //   result = await result.JSON();
+  //   console.warn(result);
+  //   if (result.name) {
+  //     localStorage.setItem("user", JSON.stringify(result));
+  //     navigate("/dashboard");
+  //   } else {
+  //     alert("please enter connect details");
+  //   }
+
+  // const handleLogin = async (e) => {
+  //   e.preventDefault(); // Prevent default form submission
+  //   try {
+  //     const response = await fetch(`${process.env.REACT_APP_API_URL}/login`, {
+  //       method: "POST",
+  //       body: JSON.stringify({ email, password }),
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //     });
+  
+  //     const result = await response.json();
+  
+  //     if (!response.ok) {
+  //       throw new Error(result.error || 'Login failed');
+  //     }
+  
+  //     if (result.user) {
+  //       localStorage.setItem("user", JSON.stringify(result.user));
+  //       navigate("/dashboard");
+  //     } else {
+  //       alert("Invalid login credentials");
+  //     }
+  //   } catch (error) {
+  //     console.error("Login error:", error);
+  //     alert(error.message || "An error occurred during login");
+  //   }
+  // };
+
+
 
   return (
     <div>
