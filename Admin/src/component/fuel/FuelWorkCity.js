@@ -2,6 +2,7 @@ import { CachedOutlined, Search } from "@mui/icons-material";
 import '../../stylecomponent/fuelworkcity.css'
 import SideBar from "../layout/SideBar";
 import Hearder from "../layout/Hearder";
+import Footer from '../layout/Footer'
 import { useNavigate } from "react-router-dom";
 const FuelWorkCity = () => {
   const cities = [
@@ -113,6 +114,7 @@ const FuelWorkCity = () => {
                 </table>
               </div>
             </div>
+            <Footer/>
           </div>
         </div>
       </div>

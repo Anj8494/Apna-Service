@@ -1,5 +1,6 @@
 import SideBar from "../layout/SideBar";
 import Hearder from "../layout/Hearder";
+import Footer from "../layout/Footer"
 import '../../stylecomponent/fuelform.css'
 
 const FuelForm=()=>{
@@ -90,6 +91,7 @@ const FuelForm=()=>{
                    </div>
                  </div>
                </div>
+               <Footer/>
             </div>
           </div>
         </div>
