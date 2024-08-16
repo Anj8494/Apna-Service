@@ -2,13 +2,14 @@
 .dashboard-container {
     text-align: center;
     padding: 50px;
-    width: 600px;
+    width: 590px;
     height: 600px;
     background-color: #b2d1f0;
     font-family: Georgia, serif;
     border-radius: 10px;
     box-shadow: 0px 4px 20px;
     color: #443c3c;
+    margin-top: 20px;
 }
 .arrow-back {
     cursor: pointer;
@@ -56,5 +57,80 @@
 .ptag{
     margin-right: 64%;
     font-size: 17px;
+}
+
+
+
+@media (max-width: 1024px) {
+  .dashboard-container {
+      width: 80%;
+      padding: 40px;
+  }
+
+  .arrow-back {
+      margin-left: 80%;
+  }
+
+  .options-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+  }
+
+  .option-card {
+      padding: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+      width: 90%;
+      height: auto;
+      padding: 30px;
+  }
+
+  .arrow-back {
+      margin-left: 70%;
+      font-size: 1.8rem;
+  }
+
+  .options-grid {
+      grid-template-columns: 1fr;
+      gap: 15px;
+  }
+
+  .option-card {
+      padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-container {
+      width: 100%;
+      height: auto;
+      padding: 10px;
+      margin-left: 300px;
+  }
+
+  .arrow-back {
+      margin-left: 60%;
+      font-size: 1.6rem;
+  }
+
+  .profile {
+      width: 60px;
+      height: 60px;
+  }
+
+  .option-card {
+      padding: 5px;
+  }
+
+  .option-card p {
+      font-size: 16px;
+  }
+
+  .ptag {
+      font-size: 15px;
+  }
 }
 

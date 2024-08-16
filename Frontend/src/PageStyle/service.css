@@ -57,4 +57,76 @@ h1{
 
 
 
-
+  @media (max-width: 1024px) {
+    .container {
+      width: 80%;
+    }
+  
+    .avatar {
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .container {
+      width: 90%;
+      padding: 15px;
+      margin-bottom: 400px;
+    }
+  
+    .area-item {
+      padding: 8px;
+    }
+  
+    .icon-placeholder {
+      width: 35px;
+      height: 35px;
+    }
+  
+    .area-name {
+      font-size: 1.2rem;
+    }
+  
+    .avatar {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 0;
+    }
+  }
+  
+  @media (max-width: 479px) {
+    .container {
+      width: 75%;
+      padding: 50px;
+      margin-left: 200px;
+      margin-top: 500px;
+    }
+  
+    h1 {
+      font-size: 1.8rem;
+    }
+  
+    .area-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .icon-placeholder {
+      width: 30px;
+      height: 30px;
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  
+    .area-name {
+      font-size: 1.1rem;
+    }
+  
+    .avatar {
+      width: 30px;
+      height: 30px;
+      margin-bottom: 10px;
+    }
+  }
+  

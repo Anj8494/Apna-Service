@@ -61,3 +61,80 @@ button:hover{
     display: flex;
 }
 
+@media (max-width: 1024px) {
+    .edit-account-container {
+        width: 80%;
+        padding: 20px;
+        margin-bottom: 350px;
+    }
+
+    input {
+        width: 75%;
+    }
+
+    .button {
+        width: 95%;
+    }
+}
+
+@media (max-width: 768px) {
+    .edit-account-container {
+        width: 80%;
+        padding: 15px;
+        margin-top: 300px;
+    }
+
+    input {
+        width: 70%;
+    }
+
+    .button {
+        font-size: 0.9em;
+        width: 95%;
+    }
+}
+
+@media (max-width: 480px) {
+    .edit-account-container {
+        width: 75%;
+        padding: 10px;
+        margin-left: 200px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    input {
+        width: 100%;
+    }
+
+    .button {
+        font-size: 0.9em;
+        width: 100%;
+    }
+}
+
+@media (max-width: 344px) {
+    .edit-account-container {
+        width: 80%;
+        padding: 10px;
+        margin-left: 270px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    input {
+        width: 100%;
+        padding: 8px;
+        font-size: 0.9em;
+    }
+
+    .button {
+        font-size: 0.8em;
+        padding: 8px 15px;
+        width: 100%;
+    }
+}

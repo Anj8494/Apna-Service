@@ -93,7 +93,7 @@ const Verification=()=>{
                         />
                     ))}
                 </div>
-                <button className="button" type="submit" >Submit</button>
+                <button className="submitbtn" type="submit">Submit</button>
             </form>
             <div className="timer">{formatTime(timeLeft)}</div>
         </div>

@@ -39,18 +39,17 @@
     border: 2px solid #ccc;
     border-radius: 10px;
 }
-button{
+
+.submitbtn{
     width: 100%;
-    padding: 15px;
-    background-color: #f97316;
-    color: white;
+    background-color:#e67e00 ;
     border: none;
     border-radius: 8px;
     font-size: 16px;
     cursor: pointer;
     margin-top: 10px;
-    margin-right: 60px;
 }
+
 
 .timer{
     margin-top: 15px;
@@ -58,3 +57,52 @@ button{
     margin-left: 5px;
 }
 
+@media (max-width: 1024px) {
+    .app {
+      width: 80%;
+      padding: 40px;
+      margin-bottom: 450px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .app {
+      width: 90%;
+      padding: 30px;
+      margin-bottom: 250px;
+    }
+  
+    .code-inputs input {
+      width: 80px;
+      height: 28px;
+      font-size: 16px;
+    }
+  
+    .submitbtn {
+      font-size: 14px;
+      padding: 12px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .app {
+      width: 95%;
+      padding: 10px;
+      margin-bottom: 200px;
+    }
+  
+    .code-inputs input {
+      width: 60px;
+      height: 25px;
+      font-size: 14px;
+    }
+  
+    .submitbtn {
+      font-size: 12px;
+      padding: 10px;
+    }
+  
+    .timer {
+      font-size: 16px;
+    }
+  }
