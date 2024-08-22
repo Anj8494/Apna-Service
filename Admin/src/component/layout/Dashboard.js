@@ -5,7 +5,7 @@ import {
   Person2,
   Search,
 } from "@mui/icons-material";
-import '../../stylecomponent/dashboard.css'
+import "../../stylecomponent/dashboard.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Hearder from "./Hearder";
@@ -23,7 +23,7 @@ const Dashboard = () => {
     {
       id: 1,
       customerName: "Anjali",
-      plan: "Test",
+      plan: "---",
       driverName: "Assign/Choose Driver",
       fuelType: "Test",
       fuelPrice: "$20.00",
@@ -32,16 +32,16 @@ const Dashboard = () => {
     {
       id: 2,
       customerName: "abhi",
-      plan: "Test",
+      plan: "--",
       driverName: "Assign/Choose Driver",
-      fuelType: "Test",
+      fuelType: "baik",
       fuelPrice: "$30.00",
       deliveryAddress: "Ujjain, Madhya Pradesh, India",
     },
     {
       id: 3,
       customerName: "shan",
-      plan: "Test",
+      plan: "---",
       driverName: "Assign/Choose Driver",
       fuelType: "Test",
       fuelPrice: "$10.00",
@@ -52,7 +52,7 @@ const Dashboard = () => {
       customerName: "rj",
       plan: "Test",
       driverName: "Assign/Choose Driver",
-      fuelType: "Test",
+      fuelType: "boat",
       fuelPrice: "$50.00",
       deliveryAddress: "Indore, Madhya Pradesh, India",
     },
@@ -61,11 +61,31 @@ const Dashboard = () => {
       customerName: "radha",
       plan: "Test",
       driverName: "Assign/Choose Driver",
-      fuelType: "Test",
+      fuelType: "car",
       fuelPrice: "$70.00",
       deliveryAddress: "ratlam, Madhya Pradesh, India",
     },
   ]);
+
+  const [currentPage, setCurrentPage] = useState("");
+  const entriesPerPage = 9;
+  const totalPages = Math.ceil(bookings.length / entriesPerPage);
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
+  const handlePrevious = () => {
+    setCurrentPage((prev) => Math.max(prev - 1, 1));
+  };
+
+  const handleNext = () => {
+    setCurrentPage((prev) => Math.min(prev + 1, totalPages));
+  };
+
+  const startIndex = (currentPage - 1) * entriesPerPage;
+  const endIndex = Math.min(startIndex + entriesPerPage, bookings.length);
+
   return (
     <div>
       <div className="layout-wrapper layout-content-navbar">
@@ -94,69 +114,104 @@ const Dashboard = () => {
               </div>
             </div>
             <div className="search-bar">
-               <input type="text" placeholder="Search"/>
-                 <button className="search-button"><Search/></button>
-                 <button className="reload"><CachedOutlined/></button>
-             </div>
-            <div className="card">
-              <div
-                className="heading"
-                style={{ display: "flex", justifyContent: "space-between" }}
-              >
-                <h3>Pending Booking</h3>
-                <p>Showing 1-6 of 29</p>
-              </div>
+              <input type="text" placeholder="Search" />
+              <button className="search-button">
+                <Search />
+              </button>
+              <button className="reload">
+                <CachedOutlined />
+              </button>
             </div>
+
             <div class="content-wrapper">
-              <div className="table-responsive">
-                <table className="table">
-                  <thead className="table-light">
-                    <tr>
-                      <th className="text-truncate">S.No</th>
-                      <th className="text-truncate">CUSTOMER NAME</th>
-                      <th className="text-truncate">PLAN</th>
-                      <th className="text-truncate">DRIVER NAME</th>
-                      <th className="text-truncate">FUEL TYPE</th>
-                      <th className="text-truncate">FUEL PRICE</th>
-                      <th className="text-truncate">DELIVERY ADDRESS</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {bookings?.map((booking, index) => (
+              <div class="card">
+                <div className="haedingdiv">
+                  <h5 class="card-header">Pending Booking</h5>
+                  <p className="card-p">Showing 1-25 of 61</p>
+                </div>
+
+                <div class="table-responsive text-nowrap">
+                  <table class="table">
+                    <thead>
                       <tr>
-                        <td>
-                          <div className="d-flex align-items-center">
-                            <div className="avatar avatar-sm me-3">
-                              {booking.id}
-                            </div>
-                          </div>
-                        </td>
-                        <td className="text-truncate">
-                          {booking.customerName}
-                        </td>
-                        <td className="text-truncate">{booking.plan}</td>
-                        <td className="text-truncate">
-                          <span className="badge bg-label-warning rounded-pill">
-                            {booking.driverName}
-                          </span>
-                        </td>
-                        <td className="text-truncate">{booking.fuelType}</td>
-                        <td className="text-truncate">{booking.fuelPrice}</td>
-                        <td className="text-truncate">
-                          {booking.deliveryAddress}
-                        </td>
+                        <th>S.No</th>
+                        <th>CUSTOMER NAME</th>
+                        <th>PLAN</th>
+                        <th>DRIVER NAME</th>
+                        <th>FUEL TYPE</th>
+                        <th>FUEL PRICE</th>
+                        <th>DELIVERY ADDRESS</th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
+                    </thead>
+                    <tbody class="table-border-bottom-0">
+                      {bookings?.map((booking, index) => (
+                        <tr>
+                          <td>{booking.id}</td>
+                          <td>{booking.customerName}</td>
+                          <td>{booking.plan}</td>
+                          <td>
+                            <span class="badge rounded-pill bg-label-primary me-1">
+                              {booking.driverName}
+                            </span>
+                          </td>
+                          <td>{booking.fuelType}</td>
+                          <td>{booking.fuelPrice}</td>
+                          <td>{booking.deliveryAddress}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                  <div className="pagination">
+                    <div className="pagination-controls">
+                      <button
+                        onClick={handlePrevious}
+                        disabled={currentPage === 1}
+                      >
+                        Previous
+                      </button>
+                      {[...Array(totalPages).keys()].map((_, index) => {
+                        const pageNumber = index + 1;
+                        if (
+                          pageNumber === 1 ||
+                          pageNumber === totalPages ||
+                          (pageNumber >= currentPage - 1 &&
+                            pageNumber <= currentPage + 1)
+                        ) {
+                          return (
+                            <button
+                              key={pageNumber}
+                              onClick={() => handlePageChange(pageNumber)}
+                              className={
+                                currentPage === pageNumber ? "active" : ""
+                              }
+                            >
+                              {pageNumber}
+                            </button>
+                          );
+                        } else if (
+                          pageNumber === currentPage - 2 ||
+                          pageNumber === currentPage + 2
+                        ) {
+                          return <span key={pageNumber}>...</span>;
+                        }
+                        return null;
+                      })}
+                      <button
+                        onClick={handleNext}
+                        disabled={currentPage === totalPages}
+                      >
+                        Next
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-            <Footer/>
+            <Footer />
           </div>
         </div>
       </div>
     </div>
-     
 
     // <div className="content-wrapper">
     //     <div className="main-con">

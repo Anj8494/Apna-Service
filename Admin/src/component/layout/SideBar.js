@@ -118,7 +118,7 @@ const SideBar = () => {
 
            
             <li className="menu-item">
-              <Link to="" className="menu-link">
+              <Link to='/managecategory' className="menu-link">
                 <Dns className="menu-icon tf-icons mdi mdi-google-circles-extended"/>
                 <div data-i18n="Icons">Manage Category</div>
               </Link>
@@ -138,13 +138,13 @@ const SideBar = () => {
                )}
             </li>
 
-            <li className="menu-item">
+            {/* <li className="menu-item">
               <Link to="" 
                className="menu-link">
                 <Dns className="menu-icon tf-icons mdi mdi-google-circles-extended"/>
                 <div data-i18n="Icons">Manage Category</div>
               </Link>
-            </li>
+            </li> */}
 
 
             <li className="menu-item">
@@ -156,7 +156,7 @@ const SideBar = () => {
 
 
             <li className="menu-item">
-              <Link to="" className="menu-link">
+              <Link to='/notification' className="menu-link">
                 <NotificationsActive className="menu-icon tf-icons mdi mdi-google-circles-extended"/>
                 <div data-i18n="Icons">Notification</div>
               </Link>
@@ -177,7 +177,7 @@ const SideBar = () => {
             </li>
 
             <li className="menu-item">
-              <Link to="" className="menu-link">
+              <Link to='/adminprofile'  className="menu-link">
                 <Person className="menu-icon tf-icons mdi mdi-google-circles-extended"/>
                 <div data-i18n="Icons">Admin Profile</div>
               </Link>

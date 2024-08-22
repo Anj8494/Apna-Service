@@ -1,9 +1,10 @@
-import { CachedOutlined, Search } from "@mui/icons-material";
 import '../../stylecomponent/fuelworkcity.css'
 import SideBar from "../layout/SideBar";
 import Hearder from "../layout/Hearder";
 import Footer from '../layout/Footer'
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { CachedOutlined, Search } from '@mui/icons-material';
 const FuelWorkCity = () => {
   const cities = [
     {
@@ -52,6 +53,26 @@ const FuelWorkCity = () => {
 
   const navigate = useNavigate();
 
+
+  const [currentPage, setCurrentPage] = useState("");
+  const entriesPerPage = 9;
+  const totalPages = Math.ceil(cities.length / entriesPerPage);
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
+  const handlePrevious = () => {
+    setCurrentPage((prev) => Math.max(prev - 1, 1));
+  };
+
+  const handleNext = () => {
+    setCurrentPage((prev) => Math.min(prev + 1, totalPages));
+  };
+
+  const startIndex = (currentPage - 1) * entriesPerPage;
+  const endIndex = Math.min(startIndex + entriesPerPage, cities.length);
+
   return (
     <div>
       <div className="layout-wrapper layout-content-navbar">
@@ -61,64 +82,126 @@ const FuelWorkCity = () => {
             <Hearder />
             <div className="content">
               <hearder className="hearder">
-                <h1>Fuel Work City</h1>
+                <h1>Fuel Work City </h1>
+                <p className='p'> | Dashboard ---Fuel List</p>
                 <button className="addcity" onClick={()=>navigate('/fuelform')}>+ Add New City</button>
               </hearder>
             </div>
-               <div className="card">
-              <div
-                className="heading"
-                style={{ display: "flex", justifyContent: "space-between" }}
-              >
-                <h3>Pending Booking</h3>
-                <p>Showing 1-6 of 29</p>
-              </div>
+            <div className="search-bar">
+              <input type="text" placeholder="Search" />
+              <button className="search-button">
+                <Search />
+              </button>
+              <button className="reload">
+                <CachedOutlined />
+              </button>
             </div>
-
-
             <div class="content-wrapper">
-              <div className="table-responsive">
-                <table className="table">
-                  <thead className="table-light">
-                    <tr>
-                      <th className="text-truncate">S.No</th>
-                      <th className="text-truncate">CITY</th>
-                      <th className="text-truncate">FULL ADDRESS</th>
-                      <th className="text-truncate">STATUS</th>
-                      <th className="text-truncate">ACTION</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {cities?.map((city, index) => (
+              <div class="card">
+                <div className="haedingdiv">
+                  <h5 class="card-header">Pending Booking</h5>
+                  <p className="card-p">Showing 1-25 of 61</p>
+                </div>
+
+                <div class="table-responsive text-nowrap">
+                  <table class="table">
+                    <thead>
                       <tr>
-                        <td>
-                          <div className="d-flex align-items-center">
-                            <div className="avatar avatar-sm me-3">
-                              {city.id}
+                        <th>S.No</th>
+                        <th>CITY</th>
+                        <th>FULL ADDRESS</th>
+                        <th>STATUS</th>
+                        <th>ACTION</th>
+                      </tr>
+                    </thead>
+                    <tbody class="table-border-bottom-0">
+                      {cities?.map((city, id) => (
+                        <tr>
+                          <td>{city.id}</td>
+                          <td>{city.city}</td>
+                          <td>{city.address}</td>
+                          <td>
+                            <span className="badge rounded-pill bg-label-primary me-1">
+                              {city.status}
+                            </span>
+                          </td>
+                          <td>
+                          <div className="dropdown">
+                            <button type="button" className="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                              <i className="mdi mdi-dots-vertical"></i>
+                            </button>
+                            <div className="dropdown-menu">
+                              <Link className="dropdown-item" to=""
+                                ><i className="mdi mdi-pencil-outline me-2"></i> Edit</Link
+                              >
+                              <Link className="dropdown-item" to=""
+                                ><i className="mdi mdi-trash-can-outline me-2"></i> Delete</Link
+                              >
                             </div>
                           </div>
                         </td>
-                        <td className="text-truncate">
-                          {city.city}
-                        </td>
-                        <td className="text-truncate">{city.address}</td>
-                        <td className="text-truncate">
-                          <span className="badge bg-label-warning rounded-pill">
-                            {city.status}
-                          </span>
-                        </td>
-                        <td className="text-truncate"><i className="mdi mdi-dots-vertical"></i></td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                 <div className="pagination">
+                    <div className="pagination-controls">
+                      <button
+                        onClick={handlePrevious}
+                        disabled={currentPage === 1}
+                      >
+                        Previous
+                      </button>
+                      {[...Array(totalPages).keys()].map((_, index) => {
+                        const pageNumber = index + 1;
+                        if (
+                          pageNumber === 1 ||
+                          pageNumber === totalPages ||
+                          (pageNumber >= currentPage - 1 &&
+                            pageNumber <= currentPage + 1)
+                        ) {
+                          return (
+                            <button
+                              key={pageNumber}
+                              onClick={() => handlePageChange(pageNumber)}
+                              className={
+                                currentPage === pageNumber ? "active" : ""
+                              }
+                            >
+                              {pageNumber}
+                            </button>
+                          );
+                        } else if (
+                          pageNumber === currentPage - 2 ||
+                          pageNumber === currentPage + 2
+                        ) {
+                          return <span key={pageNumber}>...</span>;
+                        }
+                        return null;
+                      })}
+                      <button
+                        onClick={handleNext}
+                        disabled={currentPage === totalPages}
+                      >
+                        Next
+                      </button>
+                    </div>
+                  </div> 
+                </div>
               </div>
             </div>
             <Footer/>
           </div>
         </div>
       </div>
-    </div>
+
+
+</div>
+
+
+
+
+
     // <div class="layout-wrapper layout-content-navbar">
     //   <div class="layout-container">
     //     <div class="layout-page">

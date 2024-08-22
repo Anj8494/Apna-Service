@@ -1,25 +1,7 @@
-/* .form{
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 120px;
-    
-} */
+
 .form-group{
     margin-bottom: 20px;
 }
-/* .add-new-city{
-    width: 80%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-} */
-
-
-
-
 
 
 .submitbutton{
@@ -33,10 +15,13 @@
   cursor: pointer;
 }
 button[type="button"] {
-    background-color: #6c757d;
+    background-color: #dee2e7;
   }
 
-
+.p{
+  margin-left:30px ;
+  margin-top: 15px;
+}
 .btn{
   border: none;
   margin-left: 15px;
