@@ -8,7 +8,7 @@
     height: 40px;
     width: 150px;
     font-size: 0.9rem;
-    margin-left: 580px;
+    margin-left: 670px;
 }
 
 
@@ -25,7 +25,7 @@
   
   .search-bar input {
     /* flex-grow: 1; */
-    width: 400px;
+    width: 380px;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ced4da;
@@ -34,7 +34,7 @@
   }
   
   .search-button {
-    padding: 4px 16px;
+    padding: 6px 16px;
     border: 4px;
     background-color: #007bff;
     color: white;
@@ -43,7 +43,7 @@
     margin-left: 20px;
   }
   .reload{
-    padding: 2px 15px;
+    padding: 5px 15px;
     /* border: 4px; */
     background-color: #b5c9de;
     color: black;
@@ -63,12 +63,9 @@
     display: flex;
     margin-top: 20px
   }
-  /* h1{
-    margin-right:20px ;
-  } */
   .p{
     margin-top: 10px;
-    margin-right: 30px;
+    margin-right: 10px;
   }
 
   @media (max-width: 1200px) {

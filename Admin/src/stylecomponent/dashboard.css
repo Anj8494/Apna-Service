@@ -52,9 +52,9 @@
     align-items: center;
   }
   
-  .search-bar input {
+  .search{
     /* flex-grow: 1; */
-    width: 400px;
+    width: 380px;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ced4da;
@@ -62,8 +62,8 @@
     text-align: center;
   }
   
-  .search-button {
-    padding: 4px 16px;
+  .searchbtn {
+    padding: 8px 16px;
     border: 4px;
     background-color: #007bff;
     color: white;
@@ -71,8 +71,8 @@
     cursor: pointer;
     margin-left: 20px;
   }
-  .reload{
-    padding: 2px 15px;
+  .reloadbtn{
+    padding: 6px 15px;
     /* border: 4px; */
     background-color: #b5c9de;
     color: black;

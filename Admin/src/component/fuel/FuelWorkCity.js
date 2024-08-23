@@ -89,10 +89,10 @@ const FuelWorkCity = () => {
             </div>
             <div className="search-bar">
               <input type="text" placeholder="Search" />
-              <button className="search-button">
+              <button className="searchbtn">
                 <Search />
               </button>
-              <button className="reload">
+              <button className="reloadbtn">
                 <CachedOutlined />
               </button>
             </div>
@@ -126,16 +126,16 @@ const FuelWorkCity = () => {
                             </span>
                           </td>
                           <td>
-                          <div className="dropdown">
-                            <button type="button" className="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                          <div class="dropdown">
+                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                               <i className="mdi mdi-dots-vertical"></i>
                             </button>
                             <div className="dropdown-menu">
-                              <Link className="dropdown-item" to=""
-                                ><i className="mdi mdi-pencil-outline me-2"></i> Edit</Link
+                              <Link className="dropdown-item" href="javascript:void(0);"
+                                ><i className="mdi mdi-pencil-outline me-1"></i> Edit</Link
                               >
-                              <Link className="dropdown-item" to=""
-                                ><i className="mdi mdi-trash-can-outline me-2"></i> Delete</Link
+                              <Link className="dropdown-item" href="javascript:void(0);"
+                                ><i className="mdi mdi-trash-can-outline me-1"></i> Delete</Link
                               >
                             </div>
                           </div>

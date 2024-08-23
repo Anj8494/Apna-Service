@@ -64,10 +64,10 @@ const ManageCategory = () =>
                 placeholder="Search by Category"
                 className="sear"
               />
-              <button className="search-button">
+              <button className="searchbtn">
                 <Search />
               </button>
-              <button className="reload">
+              <button className="reloadbtn">
                 <CachedOutlined />
               </button>
             </div>
