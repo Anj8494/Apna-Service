@@ -2,20 +2,36 @@ import SideBar from "../layout/SideBar";
 import Hearder from "../layout/Hearder";
 import Footer from "../layout/Footer"
 import '../../stylecomponent/fuelform.css'
+import { useNavigate } from "react-router-dom";
 
-const FuelForm=()=>{
+const FuelForm=()=>
+  {
+    const navigate =useNavigate("")
     return<div>
         <div className="layout-wrapper layout-content-navbar">
         <div className="layout-container">
           <SideBar />
           <div className="layout-page">
             <Hearder />
+            <div className="content">
+              <hearder className="hearder">
+                <h1>Fuel Work City </h1>
+                <p className='p'> | Dashboard ---Fuel List --- Add New City</p>
+              </hearder>
+            </div>
+            <div className="search-bar"></div>
 
-            <div class="content-wrapper">
+            <div className="content-wrapper">
               <div className="row">
                  <div className="col-xxl">
                    <div className="card mb-4">
                      <div className="card-body">
+                     <div className="row mb-3">
+                           <label className="col-sm-2 col-form-label" for="basic-default-name">City Name</label>
+                           <div className="col-sm-10">
+                             <input type="text" className="form-control" id="basic-default-name" placeholder="Enter SUb Category Price" />
+                           </div>
+                           </div>
                          <div className="row mb-3">
                            <label className="col-sm-2 col-form-label" for="basic-default-name">Boat_oil</label>
                            <div className="col-sm-10">
@@ -46,7 +62,7 @@ const FuelForm=()=>{
                                  placeholder="enter Sub Category Price"
                                  aria-label="john.doe"
                                  aria-describedby="basic-default-email2" />
-                               <span class="input-group-text" id="basic-default-email2">                               </span>
+                               <span className="input-group-text" id="basic-default-email2">                               </span>
                              </div>
                              <div className="form-text">Sub Category Price</div>
                              </div>
@@ -72,19 +88,19 @@ const FuelForm=()=>{
                            <input
                                type="text"
                                id="basic-default-phone"
-                               class="form-control phone-mask"
+                               className="form-control phone-mask"
                                placeholder="Sub Category Price"
                                aria-label="658 799 8941"
                                aria-describedby="basic-default-phone" />
                            </div>
                            </div>
-                           <label class="col-sm-2 col-form-label" for="basic-default-message">Shan</label>
+                           <label className="col-sm-2 col-form-label" for="basic-default-message">Shan</label>
 
                          </div>
-                         <div class="row justify-content-end">
-                           <div class="col-sm-10">
-                             <button type="submit" class="btn btn-primary">Send</button>
-                             <button type="submit" class="btn btn-primary">Back</button>
+                         <div className="row justify-content-start">
+                           <div className="col-sm-10">
+                             <button type="submit" className="btn btn-primary">Send</button>
+                             <button type="submit" className="btn btn-primary" onClick={()=>navigate('/fuelworkcity')}>Back</button>
                            </div>
                          </div>
                      </div>

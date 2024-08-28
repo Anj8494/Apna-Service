@@ -23,12 +23,11 @@
     margin-top: 15px;
     padding: 15px;
     cursor: pointer;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
   }
+
   
-  .menu-item:hover {
-    background-color: #e0e0e0;
-  }
-  
+
   .dashboard-i:before {
     content: "\f015";
   }
