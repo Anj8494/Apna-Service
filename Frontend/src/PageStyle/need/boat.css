@@ -6,7 +6,7 @@
     font-family: Georgia, serif;
     border-radius: 10px;
     box-shadow: 0px 4px 20px;
-    height: 600px;
+    height: 550px;
     width: 500px;
     color:black;
     font-family: Arial, sans-serif;
@@ -16,33 +16,32 @@
   .boat-header {
     display: flex;
     align-items: center;
-    margin: 20px;
-  }
-  
-  .logo {
-    width: 80px;
-    height: 80px;
-    margin-right: 400px;
-    margin-top: 30px;
-    border-radius: 50%;
-  }
-  
-  .boat-header h1 {
     margin: 10px;
   }
   
-  .boat-item {
+  .logoim {
+    width: 60px;
+    height: 60px;
+    margin-right: 360px;
+    margin-top: 30px;
+    border-radius: 50%;
+  }
+  .headi{
+    margin-right: 350px;
+  }
+  
+  .boat-item{
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: white;
     width: 80%;
-    padding: 20px;
+    padding: 7px;
     margin: 10px;
     border-radius: 8px;
     position: relative;
     box-shadow: 0px 4px 20px;
-    margin-top: 20px;
+    margin-top: 15px;
   }
   
   .boat-text {
@@ -51,19 +50,20 @@
   }
   
   .icon {
-    width: 30px;
-    height: 30px;
+    width: 80px;
+    height: 80px;
     margin-right: 10px;
+    margin-bottom: 5px;
   }
   
   .boat-price {
     background-color: #ff6666;
-    padding: 15px;
+    padding: 10px;
     border-radius: 50%;
     font-size: 1.2em;
     position: absolute;
     right: 10px;
-    top: 10px;
+    top: 15px;
   }
   
   .back-button {

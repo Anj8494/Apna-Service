@@ -26,12 +26,14 @@ const Profile=()=>
 
     return(
         <div className="profile-container">
-            <ArrowBack onClick={()=>navigate('/servicearea')} className='arrow'/>
-            <BorderColorOutlined onClick={()=>navigate('/edit')} className='edit-profile'/>
+            <div className='iconb'>
+            <ArrowBack onClick={()=>navigate('/servicearea')} className='arrowb'/>
+            <BorderColorOutlined onClick={()=>navigate('/edit')} className='edit-profilei'/>
+            </div>
             <header className='profile-header'>
             <h1> {user.fullName}</h1>
             <img src="https://w7.pngwing.com/pngs/555/703/png-transparent-computer-icons-avatar-woman-user-avatar-face-heroes-service-thumbnail.png" alt="user" 
-            className="profile"/>
+            className="profileimg"/>
             </header>
            <div className="profile-menu">
                 <div className="profile-menu-item" onClick={()=>navigate('/orderhistory')}>

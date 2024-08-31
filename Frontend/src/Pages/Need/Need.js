@@ -11,13 +11,17 @@ const Need=()=>
     // }
     return(
         <div className="dashboard-container">
-            <ArrowBack onClick={()=>navigate('/profile')} className="arrow-back"/>
+            <div className="arrow-back">
+            <ArrowBack onClick={()=>navigate('/profile')}/>
+            </div>
             <img src="https://w7.pngwing.com/pngs/555/703/png-transparent-computer-icons-avatar-woman-user-avatar-face-heroes-service-thumbnail.png" 
             alt="user" 
             onClick={()=>navigate('/profile')}
             className="profile"/>
-            <h1>Welcome</h1>
+            <div className="headg">
+            <h1 className="ptas">Welcome</h1>
             <p className="ptag">Need a helping hand today?</p>
+            </div>
             <div className="options-grid">
                 <div className="option-card" onClick={()=>navigate('/equipment')}>
                     <Build style={{fontSize :50}}/>

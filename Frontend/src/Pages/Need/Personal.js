@@ -14,8 +14,8 @@ const Personal=()=>
                 <img src='https://w7.pngwing.com/pngs/555/703/png-transparent-computer-icons-avatar-woman-user-avatar-face-heroes-service-thumbnail.png' 
                 onClick={()=>navigate('/profile')}
                 className='logo'/>
-                <h1>Personal</h1>
             </div>
+            <h1 className='headn'>Personal</h1>
             {personalItem?.map((item, index)=>(
                 <div className='personal-item' key={index}>
                     <div className='personal-text' onClick={()=>navigate('/test')}>

@@ -15,9 +15,9 @@ const Equipment=()=>{
             <div className="equipment-hearder">
                 <img src='https://w7.pngwing.com/pngs/555/703/png-transparent-computer-icons-avatar-woman-user-avatar-face-heroes-service-thumbnail.png'
                 onClick={()=>navigate('/profile')}
-                className='logo'/>
-                <h1>Equipment</h1>
+                className='logos'/>
             </div>
+            <h1 className='haedt'>Equipment</h1>
             {equipmentItem?.map((item, index)=>(
                 <div className='equipment-item' key={index}>
                     <div className='equipment-text' onClick={()=>navigate('/test')}>

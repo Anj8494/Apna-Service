@@ -58,7 +58,7 @@ body {
     border-radius: 5px;
   }
   button {
-    width: 97%;
+    width: 97.4%;
     padding: 10px;
     background-color: #f0ad4e;
     border: none;
@@ -83,8 +83,8 @@ body {
     color: black;
     margin-right: 580px;
   }
-  h1{
-    margin-top: 30px;
+  .headw{
+    margin-top: 20px;
   }
 
   @media (max-width: 1024px) {

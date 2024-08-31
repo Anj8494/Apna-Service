@@ -40,7 +40,7 @@ const Edit=()=>{
              <div className="arrow">
             <ArrowBack onClick={()=>navigate('/profile')}/>
             </div>
-            <h1>Edit Accoount</h1>
+            <h1>Edit Account</h1>
             <form onSubmit={handlSubmit}>
                 <div className="form-group">
                     <label htmlFor="fullname">FullName</label>

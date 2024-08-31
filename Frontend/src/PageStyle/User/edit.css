@@ -28,12 +28,13 @@ form{
 label{
     display: block;
     margin-bottom: 5px;
+    margin-left: 1px;
     font-size: 1em;
     font-weight: bold;
     margin-top: 10px;
 }
 input{
-    width: 60%;
+    width: 50%;
     padding: 10px;
     font-size: 1em;
     border: 1px solid #ccc;
@@ -49,8 +50,8 @@ input{
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin: 2px;
-    width: 96.5%;
+    margin: 3px;
+    width: 96.7%;
 }
 
 button:hover{
@@ -60,6 +61,7 @@ button:hover{
 .arrow{
     display: flex;
 }
+
 
 @media (max-width: 1024px) {
     .edit-account-container {

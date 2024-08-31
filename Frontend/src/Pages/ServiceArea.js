@@ -23,7 +23,7 @@ const ServiceArea=()=>
                   <img src="https://w7.pngwing.com/pngs/555/703/png-transparent-computer-icons-avatar-woman-user-avatar-face-heroes-service-thumbnail.png" 
                   alt="user"
                   onClick={()=>navigate('/profile')}
-                className='avatar'/>
+                className='avatarimg'/>
              </div>
             <h1>Service Area</h1>
             <ul className='area-list'>

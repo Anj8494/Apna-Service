@@ -1,9 +1,8 @@
-
 .dashboard-container {
     text-align: center;
     padding: 50px;
-    width: 590px;
-    height: 600px;
+    width:600px;
+    height: 550px;
     background-color: #b2d1f0;
     font-family: Georgia, serif;
     border-radius: 10px;
@@ -15,13 +14,14 @@
     cursor: pointer;
     color: black;
     display: flex;
-    margin-left: 590px;
+    justify-content: end;
     font-size: 2rem;
+    margin-left: 620px;
 }
 
 .profile{
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     display: flex;
   }
@@ -30,13 +30,13 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 13px;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .option-card {
     background-color: white;
     color: black;
-    padding: 30px;
+    padding: 20px;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
@@ -49,7 +49,7 @@
 }
 
 .option-card p {
-    margin-top: 30px;
+    margin-top: 20px;
     font-size: 18px;
     font-weight: bold;
 }
@@ -58,7 +58,6 @@
     margin-right: 64%;
     font-size: 17px;
 }
-
 
 
 @media (max-width: 1024px) {

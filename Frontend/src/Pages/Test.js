@@ -22,7 +22,7 @@ const Test =()=>
         <ArrowBack className='arrow' onClick={()=>navigate('/equipment')}/>
          <img src='https://w7.pngwing.com/pngs/555/703/png-transparent-computer-icons-avatar-woman-user-avatar-face-heroes-service-thumbnail.png' 
          className='logo' onClick={()=>navigate('/profile')} />
-            <h1>Test</h1>
+            <h1 className="headw">Test</h1>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <input

@@ -6,7 +6,7 @@
     font-family: Georgia, serif;
     border-radius: 10px;
     box-shadow: 0px 4px 20px;
-    height: 600px;
+    height: 550px;
     width: 500px;
     color:black;
     font-family: Arial, sans-serif;
@@ -16,19 +16,24 @@
   .equipment-header {
     display: flex;
     align-items: center;
-    margin: 20px;
+    margin: 10px;
+  }
+  .haedt{
+    display: flex;
+    margin-right: 260px;
   }
   
-  .logo {
-    width: 80px;
-    height: 80px;
-    margin-right: 400px;
+  .logos {
+    width: 60px;
+    height: 60px;
+    margin-right: 360px;
     margin-top: 30px;
     border-radius: 50%;
   }
   
-  .equipment-header h1 {
-    margin: 10px;
+  .equipment-hearder h1 {
+    margin: 15px;
+    margin-left: 15px;
   }
   
   .equipment-item {
@@ -37,7 +42,7 @@
     align-items: center;
     background-color: white;
     width: 80%;
-    padding: 20px;
+    padding: 8px;
     margin: 10px;
     border-radius: 8px;
     position: relative;
@@ -54,11 +59,12 @@
     width: 80px;
     height: 80px;
     margin-right: 10px;
+    margin-bottom: 5px;
   }
   
   .equipment-price {
     background-color: #ff6666;
-    padding: 15px;
+    padding: 10px;
     border-radius: 50%;
     font-size: 1.2em;
     position: absolute;
