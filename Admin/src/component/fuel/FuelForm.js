@@ -99,8 +99,8 @@ const FuelForm=()=>
                          </div>
                          <div className="row justify-content-start">
                            <div className="col-sm-10">
-                             <button type="submit" className="btn btn-primary">Send</button>
-                             <button type="submit" className="btn btn-primary" onClick={()=>navigate('/fuelworkcity')}>Back</button>
+                             <button type="submit" className="btns btn-primary">Send</button>
+                             <button type="submit" className="btns btn-primary" onClick={()=>navigate('/fuelworkcity')}>Back</button>
                            </div>
                          </div>
                      </div>

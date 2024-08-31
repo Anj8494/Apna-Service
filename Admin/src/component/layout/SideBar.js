@@ -4,6 +4,7 @@ BookOnline,Dns,DriveFileRenameOutlineOutlined,Edit,Home,LinkRounded,Notification
 } from "@mui/icons-material";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import '../../stylecomponent/sidebar.css'
 const SideBar = () => {
   const [activeMenu, setActiveMenu] = useState(null);
   const navigate = useNavigate();
@@ -132,8 +133,8 @@ const SideBar = () => {
               </Link>
               {activeMenu === 'userManagement' && (
                 <div classNameName="submenu-item">
-                    <div style={{margin: "0px 30px"}} onClick={()=>navigate('/user')}>User</div>
-                    <div style={{margin: "0px 30px"}} onClick={()=>navigate('/drivers')}>Drivers</div>
+                    <div style={{margin: "0px 30px"}} onClick={()=>navigate('/user')}><ul>User</ul></div>
+                    <div style={{margin: "0px 30px"}} onClick={()=>navigate('/drivers')}><ul>Drivers</ul></div>
                 </div>
                )}
             </li>
@@ -170,8 +171,8 @@ const SideBar = () => {
               </Link>
               {activeMenu === 'editors' && (
                     <div classNameName="submenu">
-                        <div style={{margin: "0px 30px"}}>Editor 1</div>
-                        <div style={{margin: "0px 30px"}}>Editor 2</div>
+                        <div style={{margin: "0px 30px"}}><ul>Editor 1</ul></div>
+                        <div style={{margin: "0px 30px"}}> <ul>Editor 2</ul></div>
                     </div>
                 )}
             </li>

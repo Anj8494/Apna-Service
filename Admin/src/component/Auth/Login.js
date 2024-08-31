@@ -159,7 +159,7 @@ const Login = () => {
                   </div>
                   <div className="mb-3">
                     <button
-                      className="btn btn-primary d-grid w-100"
+                      className="btn btn-primary d-grid w-100 "
                       type="submit"
                       onClick={()=>navigate('/dashboard')}
                     >
