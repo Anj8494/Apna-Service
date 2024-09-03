@@ -1,9 +1,70 @@
-import { useState } from "react";
-import { json, Link, useNavigate } from "react-router-dom";
+import {useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate();
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false)
+  const navigate = useNavigate()
+  
+
+  const handleLogin = async (event)=> {
+    event.preventDefault();
+    setLoading(true);
+    setError("")
+
+    try {
+      const response = await fetch("http://127.0.0.1:8000/api/admin_login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }), 
+      });
+
+      if (response.ok) {
+        const data = await response.json(); 
+        const token = data.token;
+        if(token){
+          localStorage.setItem('authToken', token)
+          navigate("/dashboard"); 
+        }
+        else{
+          setError("Login successful, but not token received")
+        }
+       
+      } else {
+        const errorData = await response.json();
+        setError(errorData.message || "Login failed."); 
+      }
+    } catch (error) {
+      setError("An error occurred. Please try again later."); 
+    } finally {
+      setLoading(false); 
+    }
+  }
+
+  const makeAuthenticatedRequest = async(url,method ='GET', body =null) =>{
+    const token = localStorage.getItem('authToken')
+    const headers = {
+      'Content-type' : 'application/json',
+      'Authorization' : `Bearer ${token}`
+    };
+
+    const options ={
+      method,
+      headers
+    };
+
+    if(body){
+      options.body = JSON.stringify(body);
+    }
+    const response = await fetch(url, options);
+    return response.json();
+  }
+
+
+
   return (
     <div>
       <div className="position-relative">
@@ -101,7 +162,7 @@ const Login = () => {
                   Please sign-in to your account and start the adventure
                 </p>
 
-                <form id="formAuthentication" className="mb-3" onSubmit={()=>navigate('/dashaboard')}>
+                <form id="formAuthentication" className="mb-3" onSubmit={handleLogin}>
                   <div className="form-floating form-floating-outline mb-3">
                     <input
                       type="text"
@@ -161,9 +222,10 @@ const Login = () => {
                     <button
                       className="btn btn-primary d-grid w-100 "
                       type="submit"
-                      onClick={()=>navigate('/dashboard')}
+                      disabled={loading}
+                      // onClick={()=>navigate('/dashboard')}
                     >
-                      Sign in
+                      {loading ? "Siging in..." : "Sign in"}
                     </button>
                   </div>
                 </form>
